@@ -110,6 +110,24 @@ def pagina_error(error):
 <h2>mas detalle: {{error}} </h2>
 ```
 
+## Para evaluar ruta con decicíon 
+```py
+# ruta evaluando usuario y contraseña
+
+@app.route('/ingreso/<usuario>/<password>')
+def evaluando(usuario, password):
+    # simulando base de datos
+    bd_usuario = "emerson"
+    bd_password = "123456"
+
+    # evaluando si cumple
+    if bd_usuario == usuario and bd_password == password:
+        return "Inicio exitoso"
+    else:
+        return "Datos incorrectos"
+    
+```
+
 
 
 
