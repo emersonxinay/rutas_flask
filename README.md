@@ -79,7 +79,7 @@ def mostrar_nombre(nombre):
 
 ```
 
-## redireccionar a paginas 
+## redireccionar a paginas - desde app.py
 
 ```py
 # redireccionar hacia otras paginas
@@ -95,6 +95,23 @@ def mi_redirect():
 ```html
 <a href="{{url_for('hola_mundo')}}"> Mostrar Nombre </a>
 ```
+
+## Manejo de Errores de pagina - desde app.py
+```py
+# aqui ya no se usa route para la ruta, sino errorhandler
+@app.errorhandler(404)
+def pagina_error(error):
+    return render_template('404.html', error=error), 404
+
+```
+### y desde el template crear un arichivo nuevo para los errores, en esta ocación 404.html y el codigo minimo es lo siguiente: 
+
+```html
+<h2>mas detalle: {{error}} </h2>
+```
+
+
+
 
 
 
